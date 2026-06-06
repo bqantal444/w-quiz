@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mastering Selective Breeding Quiz</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <title>🌈 OVERDRIVE RAINBOW SELECTIVE BREEDING QUIZ 🌈</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Rubik+Mono+One&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --accent-glow: #6366f1;
-            --accent-success: #10b981;
-            --accent-error: #ef4444;
+            /* Standard Rainbow Core Loop Spectrum */
+            --rainbow-grad: linear-gradient(90deg, #ff007f, #ff7f00, #ffea00, #00ff7f, #00ffff, #7f00ff, #ff007f);
+            --bg-dark: #050211;
+            --card-glass: rgba(10, 5, 28, 0.75);
+            --text-light: #ffffff;
+            --accent-success: #00ff88;
+            --accent-error: #ff0055;
         }
 
         * {
@@ -25,239 +24,347 @@
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: var(--bg-gradient);
-            color: var(--text-primary);
+            font-family: 'Space Grotesk', sans-serif;
+            background: radial-gradient(circle at 50% 50%, #120224 0%, var(--bg-dark) 100%);
+            color: var(--text-light);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
             overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Ambient background rainbow glow */
+        body::before {
+            content: '';
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(127, 0, 255, 0.15) 0%, rgba(255, 0, 127, 0.05) 50%, transparent 100%);
+            top: -200px;
+            left: -200px;
+            z-index: 0;
+            pointer-events: none;
         }
 
         .quiz-wrapper {
             width: 100%;
-            max-width: 680px;
-            perspective: 1000px;
+            max-width: 720px;
+            z-index: 2;
+            position: relative;
         }
 
-        /* Header Animation */
+        /* 3D Rainbow Text Header Styling */
         header {
             text-align: center;
-            margin-bottom: 25px;
-            animation: fadeInDown 0.8s ease-out;
+            margin-bottom: 35px;
         }
 
         header h1 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            background: linear-gradient(to right, #6366f1, #a855f7, #ec4899);
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 900;
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            background: var(--rainbow-grad);
+            background-size: 400% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 6px;
+            animation: moveRainbow 6s linear infinite;
+            /* Heavy 3D Text Shadow Graphic Effect */
+            filter: drop-shadow(2px 2px 0px rgba(0,0,0,1)) 
+                    drop-shadow(-1px -1px 0px rgba(255,255,255,0.6))
+                    drop-shadow(0px 0px 20px rgba(255,0,127,0.4));
+            margin-bottom: 10px;
         }
 
         header p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
+            color: #fff;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.8), 2px 2px 0px #000;
         }
 
-        /* Glassmorphic Container */
+        /* Dynamic Animated Rainbow-Border Card */
+        .rainbow-glow-frame {
+            position: relative;
+            background: var(--rainbow-grad);
+            background-size: 400% 400%;
+            padding: 5px; /* Border thickness */
+            border-radius: 32px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 
+                        0 0 40px rgba(127, 0, 255, 0.3);
+            animation: moveRainbow 8s linear infinite;
+        }
+
         .glass-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--card-border);
-            border-radius: 24px;
-            padding: 35px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            animation: cardEntrance 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            background: var(--card-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 27px;
+            padding: 40px;
+            position: relative;
         }
 
+        /* Progress Metrics Indicators */
         .progress-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
         .progress-badge {
-            background: rgba(99, 102, 241, 0.15);
-            color: #818cf8;
-            padding: 6px 14px;
+            background: #000;
+            color: #fff;
+            padding: 10px 20px;
             border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            border: 1px solid rgba(99, 102, 241, 0.2);
+            font-size: 0.9rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            border: 2px solid #fff;
+            box-shadow: 3px 3px 0px #ff007f, -3px -3px 0px #00ffff;
         }
 
         .bar-wrapper {
             flex-grow: 1;
-            height: 6px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            margin-left: 15px;
-            position: relative;
-            overflow: hidden;
+            height: 16px;
+            background: #000;
+            border-radius: 50px;
+            margin-left: 20px;
+            padding: 3px;
+            border: 2px solid rgba(255,255,255,0.2);
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);
         }
 
         .progress-bar {
             height: 100%;
             width: 0%;
-            background: linear-gradient(90deg, #6366f1, #a855f7);
-            border-radius: 10px;
-            transition: width 0.4s ease;
+            background: var(--rainbow-grad);
+            background-size: 400% auto;
+            border-radius: 50px;
+            transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: moveRainbow 4s linear infinite;
         }
 
+        /* Question Graphic Typography */
         .question-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            line-height: 1.4;
-            margin-bottom: 30px;
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 35px;
+            text-shadow: 2px 2px 0px #000, 0 0 15px rgba(255,255,255,0.2);
+            border-bottom: 3px dashed rgba(255,255,255,0.1);
+            padding-bottom: 20px;
         }
 
         .options-list {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 15px;
         }
 
+        /* Rainbow Option Selectors Buttons */
         .option-button {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            color: var(--text-primary);
-            padding: 18px 24px;
-            border-radius: 16px;
-            font-size: 1rem;
-            font-weight: 500;
+            background: rgba(255, 255, 255, 0.03);
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            padding: 20px 25px;
+            border-radius: 20px;
+            font-size: 1.05rem;
+            font-weight: 700;
             text-align: left;
             cursor: pointer;
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
+            transition: all 0.2s ease;
+            text-shadow: 1px 1px 2px #000;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
         }
 
         .option-button:hover {
-            background: rgba(255, 255, 255, 0.06);
-            border-color: rgba(99, 102, 241, 0.4);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
+            background: #fff;
+            color: #000;
+            border-color: #fff;
+            transform: scale(1.03) rotate(-0.5deg);
+            box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3), 
+                        0 0 15px rgba(255, 0, 127, 0.3);
+            text-shadow: none;
         }
 
-        /* Active click validation states */
+        /* Active Validation Responses */
         .option-button.correct {
-            background: rgba(16, 185, 129, 0.15) !important;
-            border-color: var(--accent-success) !important;
-            color: #34d399;
-            font-weight: 700;
+            background: linear-gradient(45deg, #006633, var(--accent-success)) !important;
+            border-color: #fff !important;
+            color: #fff !important;
+            box-shadow: 0 0 30px var(--accent-success) !important;
+            font-size: 1.15rem;
+            transform: scale(1.04);
         }
 
         .option-button.wrong {
-            background: rgba(239, 68, 68, 0.12) !important;
-            border-color: var(--accent-error) !important;
-            color: #f87171;
+            background: linear-gradient(45deg, #660022, var(--accent-error)) !important;
+            border-color: #fff !important;
+            color: #fff !important;
+            box-shadow: 0 0 30px var(--accent-error) !important;
+            opacity: 0.7;
         }
 
-        /* Results panel elements */
+        /* Final Results Panel UI Dashboard */
         .results-panel {
             display: none;
             text-align: center;
         }
 
+        .results-panel h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            background: var(--rainbow-grad);
+            background-size: 400% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: moveRainbow 4s linear infinite;
+            margin-bottom: 15px;
+            filter: drop-shadow(2px 2px 0px #000);
+        }
+
+        /* Heavy Ring Graph Graphic */
         .score-ring {
-            width: 140px;
-            height: 140px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.05) 100%);
-            border: 4px dashed #a855f7;
+            background: #000;
+            border: 8px solid transparent;
+            background-image: linear-gradient(#000, #000), var(--rainbow-grad);
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+            background-size: 100%, 400% auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             margin: 20px auto 30px;
-            animation: pulseGlow 2s infinite ease-in-out;
+            box-shadow: 0 0 40px rgba(127, 0, 255, 0.6);
+            animation: moveRainbow 4s linear infinite;
         }
 
         .score-ring .big-number {
-            font-size: 2.5rem;
-            font-weight: 800;
+            font-size: 4rem;
+            font-weight: 900;
             color: #fff;
+            font-family: 'Space Grotesk', sans-serif;
+            line-height: 1;
+            text-shadow: 3px 3px 0px #ff007f, -3px -3px 0px #00ffff;
         }
 
         .score-ring .total-label {
-            font-size: 0.85rem;
+            font-size: 1rem;
             color: var(--text-secondary);
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        #feedback-msg {
+            font-size: 1.3rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 0px #000;
         }
 
         .review-section {
             margin-top: 35px;
             text-align: left;
-            max-height: 350px;
+            max-height: 380px;
             overflow-y: auto;
-            padding-right: 10px;
+            padding-right: 15px;
+            border: 2px dashed rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 20px;
+            background: rgba(0,0,0,0.4);
         }
 
-        .review-section::-webkit-scrollbar {
-            width: 6px;
-        }
-        .review-section::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
+        .review-section h3 {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #00ffff;
+            text-shadow: 2px 2px 0px #000;
         }
 
         .review-card {
-            background: rgba(255, 255, 255, 0.01);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            padding: 18px;
-            border-radius: 14px;
-            margin-bottom: 12px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 2px solid rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 16px;
+            margin-bottom: 15px;
         }
 
         .review-card h4 {
-            font-size: 0.95rem;
-            margin-bottom: 8px;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
             line-height: 1.4;
+            color: #fff;
         }
 
         .review-card p {
-            font-size: 0.88rem;
-            color: var(--text-secondary);
-            border-left: 2px solid #6366f1;
-            padding-left: 10px;
-            margin-top: 6px;
+            font-size: 0.95rem;
+            color: #fff;
+            border-left: 4px solid transparent;
+            background: var(--rainbow-grad);
+            background-size: 400% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: moveRainbow 10s linear infinite;
+            font-weight: 700;
+            padding-left: 12px;
+            position: relative;
+        }
+        
+        .review-card p::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: var(--rainbow-grad);
+            animation: moveRainbow 4s linear infinite;
         }
 
+        /* Overdrive Metallic Rainbow Action Button */
         .restart-btn {
-            background: linear-gradient(90deg, #6366f1, #a855f7);
+            background: var(--rainbow-grad);
+            background-size: 400% auto;
             color: #fff;
-            border: none;
-            padding: 14px 35px;
-            border-radius: 14px;
-            font-size: 1rem;
-            font-weight: 700;
+            border: 3px solid #fff;
+            padding: 20px 45px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             cursor: pointer;
-            margin-top: 25px;
-            transition: opacity 0.2s;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(255, 0, 127, 0.4), 0 0 15px #00ffff;
+            text-shadow: 2px 2px 3px #000;
+            animation: moveRainbow 4s linear infinite;
+            transition: transform 0.1s;
         }
 
         .restart-btn:hover {
-            opacity: 0.9;
+            transform: scale(1.08);
+            box-shadow: 0 15px 40px rgba(0, 255, 127, 0.6), 0 0 25px #ff007f;
         }
 
-        /* Animations */
-        @keyframes cardEntrance {
-            from { opacity: 0; transform: translateY(40px) scale(0.95); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 0px rgba(99, 102, 241, 0); }
-            50% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.2); }
+        /* Keyframes Animations Loops */
+        @keyframes moveRainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
     </style>
 </head>
@@ -265,39 +372,43 @@
 
 <div class="quiz-wrapper">
     <header>
-        <h1>Artificial Selection</h1>
-        <p>Test your knowledge on the mechanics of Selective Breeding</p>
+        <h1>✨ Artificial Selection ✨</h1>
+        <p>💥 Extreme Overdrive Rainbow Edition 💥</p>
     </header>
 
-    <div class="glass-card">
-        <div id="quiz-panel">
-            <div class="progress-container">
-                <span class="progress-badge" id="badge-text">Q. 1 / 6</span>
-                <div class="bar-wrapper">
-                    <div class="progress-bar" id="bar-fill"></div>
+    <div class="rainbow-glow-frame">
+        <div class="glass-card">
+            
+            <div id="quiz-panel">
+                <div class="progress-container">
+                    <span class="progress-badge" id="badge-text">Q. 1 / 6</span>
+                    <div class="bar-wrapper">
+                        <div class="progress-bar" id="bar-fill"></div>
+                    </div>
                 </div>
+
+                <h2 class="question-title" id="question-text">Assembling Neon Vectors...</h2>
+                <div class="options-list" id="options-box">
+                    </div>
             </div>
 
-            <h2 class="question-title" id="question-text">Loading question data...</h2>
-            <div class="options-list" id="options-box">
+            <div class="results-panel" id="results-panel">
+                <h2>⚡ Evaluation Terminated ⚡</h2>
+                <div class="score-ring">
+                    <span class="big-number" id="final-score">0</span>
+                    <span class="total-label">Gained</span>
                 </div>
-        </div>
+                
+                <p id="feedback-msg">Data Stream Settled</p>
 
-        <div class="results-panel" id="results-panel">
-            <h2>Evaluation Complete</h2>
-            <div class="score-ring">
-                <span class="big-number" id="final-score">0</span>
-                <span class="total-label">out of 6</span>
+                <div class="review-section">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 20px;">🌈 Spectrum Concepts Log:</h3>
+                    <div id="review-list"></div>
+                </div>
+
+                <button class="restart-btn" onclick="resetQuiz()">Re-Ignite Array</button>
             </div>
             
-            <p style="color: var(--text-secondary);" id="feedback-msg">Good effort!</p>
-
-            <div class="review-section">
-                <h3 style="font-size: 1.1rem; margin-bottom: 15px; font-weight:700;">Concept Review Summaries:</h3>
-                <div id="review-list"></div>
-            </div>
-
-            <button class="restart-btn" onclick="resetQuiz()">Run Quiz Again</button>
         </div>
     </div>
 </div>
@@ -376,7 +487,7 @@
     let pointsAccumulator = 0;
     let clickLockout = false;
 
-    // DOM selectors
+    // DOM bindings
     const qText = document.getElementById('question-text');
     const optionsBox = document.getElementById('options-box');
     const badgeText = document.getElementById('badge-text');
@@ -396,16 +507,13 @@
         clickLockout = false;
         const currentData = questionsDatabase[itemIndex];
         
-        // Update Progress
         const calculatedProgress = (itemIndex / questionsDatabase.length) * 100;
         barFill.style.width = `${calculatedProgress}%`;
-        badgeText.textContent = `Q. ${itemIndex + 1} / ${questionsDatabase.length}`;
+        badgeText.textContent = `STAGE ${itemIndex + 1} / ${questionsDatabase.length}`;
         
-        // Inject Context Strings
         qText.textContent = currentData.q;
         optionsBox.innerHTML = '';
 
-        // Draw Interactive Selections
         currentData.options.forEach((txt, idx) => {
             const btn = document.createElement('button');
             btn.className = 'option-button';
@@ -430,11 +538,10 @@
             totalButtons[actualCorrectIndex].classList.add('correct');
         }
 
-        // Delay step to allow visual review of validation states
         setTimeout(() => {
             itemIndex++;
             paintUI();
-        }, 1250);
+        }, 1200);
     }
 
     function evaluateEndGame() {
@@ -444,25 +551,24 @@
         barFill.style.width = '100%';
         scoreLabel.textContent = pointsAccumulator;
 
-        // Custom Evaluation Copy
         if (pointsAccumulator === 6) {
-            feedbackMsg.textContent = "Flawless performance! You completely understand genetic selection dynamics.";
-            feedbackMsg.style.color = "var(--accent-success)";
+            feedbackMsg.textContent = "🔥 GODLIKE SPECTRUM RUN! PERFECT 6/6 STACK ACCUMULATED! 🔥";
+            feedbackMsg.style.color = "#00ff88";
         } else if (pointsAccumulator >= 4) {
-            feedbackMsg.textContent = "Great job! You have a solid grasp of fundamental biological selections.";
-            feedbackMsg.style.color = "#a855f7";
+            feedbackMsg.textContent = "⚡ EXCELLENT MATRIX COMBAT! DECENT ARRAY METRICS EXPECTED! ⚡";
+            feedbackMsg.style.color = "#00ffff";
         } else {
-            feedbackMsg.textContent = "Good try! Take a look through the review concepts below to strengthen your understanding.";
+            feedbackMsg.textContent = "⚠️ REBOOT RECOMMENDED! GENETIC MISALIGNMENT TRACKED! ⚠️";
+            feedbackMsg.style.color = "#ff0055";
         }
 
-        // Render Review Lists
         reviewList.innerHTML = '';
         questionsDatabase.forEach((item, index) => {
             const wrap = document.createElement('div');
             wrap.className = 'review-card';
             wrap.innerHTML = `
-                <h4><strong>Q${index + 1}:</strong> ${item.q}</h4>
-                <p><strong>Core Concept:</strong> ${item.explain}</p>
+                <h4><strong>STAGE ${index + 1}:</strong> ${item.q}</h4>
+                <p>🧬 CORE LOGIC: ${item.explain}</p>
             `;
             reviewList.appendChild(wrap);
         });
@@ -476,7 +582,6 @@
         paintUI();
     }
 
-    // Launch Application
     window.addEventListener('DOMContentLoaded', paintUI);
 </script>
 </body>
