@@ -305,70 +305,70 @@
 <script>
     const questionsDatabase = [
         {
-            q: "According to the experiment initialization parameters, how are Selectively Bred organisms (sbs) visually distinguished from Wild Variants (wvs)?",
+            q: "What is the key difference between selective breeding (artificial selection) and natural selection?",
             options: [
-                "Selectively bred organisms are colored pink, while wild variants are sky blue.",
-                "Selectively bred organisms have a green square shape, while wild variants are gray circles.",
-                "Selectively bred organisms are twice the absolute pixel size of wild variants.",
-                "Selectively bred organisms spawn on the left half of the grid environment."
+                "Selective breeding is determined by human choices, while natural selection is driven by environmental pressures.",
+                "Selective breeding occurs entirely in laboratories, whereas natural selection happens outdoors.",
+                "Selective breeding happens automatically without affecting the genetic code of organisms.",
+                "Natural selection produces physical changes much faster than selective breeding does."
             ],
             correct: 0,
-            explain: "The simulation script explicitly assigns pink ('pink') to the selectively bred organisms (sbs) and sky blue ('sky') to the wild variants (wvs) during setup."
+            explain: "Selective breeding relies on humans intentionally choosing parent organisms with specific desirable traits to pass on to the next generation, whereas natural selection is guided by environmental survival factors."
         },
         {
-            q: "Under normal default environmental conditions, what are the baseline survival and reproduction rates of the Selectively Bred (SB) population?",
+            q: "Which of the following is considered a primary advantage or goal of selective breeding?",
             options: [
-                "Survival rate of 0.50 and Reproduction rate of 0.05",
-                "Survival rate of 0.99 and Reproduction rate of 0.12",
-                "Survival rate of 0.90 and Reproduction rate of 0.25",
-                "Survival rate of 0.98 and Reproduction rate of 0.08"
+                "It naturally expands the total genetic diversity of an entire species.",
+                "It allows humans to produce organisms with specific, enhanced traits like higher crop yields or tamer behavior.",
+                "It makes populations completely immune to changing global temperatures.",
+                "It eliminates the need for natural reproduction processes entirely."
             ],
             correct: 1,
-            explain: "Under standard conditions, the simulation initializes the SB variants with a superior 0.99 survival rate and a 0.12 reproduction rate."
+            explain: "The primary purpose of selective breeding is to optimize and stabilize specific traits that humans find useful, such as higher agricultural output, disease resistance, or domestic passivity."
         },
         {
-            q: "What emergency condition causes the NetLogo simulation loop to execute a complete 'stop' command?",
+            q: "What is a major genetic vulnerability or risk associated with long-term selective breeding?",
             options: [
-                "When the total cumulative runtime hits exactly 500 calendar years.",
-                "When either individual variant population count reaches or exceeds 100,000 organisms.",
-                "When a sudden genetic mutation converts all sky-colored dots into pink shapes.",
-                "When the available digital resource plots are completely consumed."
+                "A dramatic inflation of the available gene pool variation.",
+                "A significant reduction in genetic variation, making the population fragile to environmental shifts.",
+                "Organisms learning to change their characteristics dynamically within their own lifespan.",
+                "Traits reverting completely back to ancient states within a single generation."
             ],
             correct: 1,
-            explain: "The loop checks 'if count sbs >= 100000 or count wvs >= 100000 [ stop ]' to prevent memory overflows or excessive growth spikes."
+            explain: "Because selective breeding repeatedly narrows down the parent group to match a strict trait profile, genetic variation decreases. This leaves the population highly vulnerable if conditions change or diseases strike."
         },
         {
-            q: "How do the performance profiles change when a simulated 'Environmental Shift' event occurs?",
+            q: "How does a wild, unbred population typically compare to a selectively bred population when an unexpected environmental crisis occurs?",
             options: [
-                "Both groups experience an immediate 50% decrease in overall reproductive speeds.",
-                "The Selectively Bred population baseline crashes, while Wild Variants keep a steady 0.98 survival rate.",
-                "Wild Variants are wiped out instantly due to a lack of targeted metabolic structures.",
-                "Selectively Bred groups become entirely immune to standard natural mortality risks."
+                "Wild populations crash immediately because they lack any specialized traits.",
+                "Wild populations generally adapt better due to a higher diversity of hidden, variable traits.",
+                "Selectively bred populations survive better because they are physically superior in every context.",
+                "Both groups adapt at exactly the same rate because their base biology remains unchanged."
             ],
             correct: 1,
-            explain: "When natural conditions change, the heavily specialized features of the SB group lose their advantage, dropping below the stable, high-diversity 0.98 baseline maintained by Wild Variants."
+            explain: "High genetic variation acts as a biological safety net. Wild populations contain a diverse pool of alleles, meaning some individuals will likely carry traits that provide survival advantages during an unexpected shift."
         },
         {
-            q: "What baseline behavioral routines are executed by organisms on every step ('go') of the simulation?",
+            q: "What happens to unselected or hidden traits when breeders focus heavily on maximizing just one specific feature?",
             options: [
-                "They track user cursor inputs to group up into defensive coordinates.",
-                "They update global environmental rates and run their specific breed behavior blocks.",
-                "They consume a set energy value to artificially double their size dimensions.",
-                "They completely swap genetic profiles through cross-breed functions."
+                "All other anatomical and physiological functions automatically improve to match the chosen feature.",
+                "Unselected traits can inadvertently drop out of the population or link to harmful side effects.",
+                "The unselected genes disappear safely and leave no impact on the future health of the bloodline.",
+                "Unselected traits will naturally increase in expression speed to match the chosen feature."
             ],
             correct: 1,
-            explain: "The main clock sequence updates rates globally, and then asks each breed ('sbs' and 'wvs') to systematically deploy their independent behavior blocks."
+            explain: "Focusing strictly on a single trait can cause genetic bottlenecking or linkage errors, accidentally locking in harmful recessive traits, physical weaknesses, or reduced lifespans."
         },
         {
-            q: "What biological vulnerability does this simulation illustrate about artificial long-term selective breeding profiles?",
+            q: "Which statement best describes the fundamental process of selective breeding?",
             options: [
-                "Highly bred variants are too large to fit through natural environmental paths.",
-                "Hyper-focused traits make populations fragile against sudden changes, while diverse wild profiles resist shocks.",
-                "Artificial groups reproduce too slowly to keep pace with natural replacement loops.",
-                "Bred variants mutate back into ancestral strains after three generations."
+                "Splicing foreign DNA segments into plant and animal genomes inside a sterile molecular lab.",
+                "Steering traditional reproduction over multiple generations by choosing which individuals are allowed to mate.",
+                "Exposing populations to toxic chemicals to force immediate mutations.",
+                "Allowing nature to freely dictate survival patterns without any human management."
             ],
             correct: 1,
-            explain: "The research demonstrates that optimizing for single-environment traits leaves a population vulnerable to shifts. Meanwhile, wild strains maintain stable survival thresholds because they have genetic variation."
+            explain: "Selective breeding works completely within natural reproductive cycles. It changes the frequency of traits over generations simply by controlling which individuals successfully reproduce."
         }
     ];
 
