@@ -305,70 +305,70 @@
 <script>
     const questionsDatabase = [
         {
-            q: "What is the primary defining feature of selective breeding (artificial selection)?",
+            q: "According to the experiment initialization parameters, how are Selectively Bred organisms (sbs) visually distinguished from Wild Variants (wvs)?",
             options: [
-                "Environmental survival factors dictate which organisms successfully reproduce.",
-                "Humans deliberately choose parent organisms based on specific desirable traits.",
-                "Genomics engineers rewrite chromosomal codes inside a sterile laboratory.",
-                "Organisms consciously alter their traits over a single lifetime to adapt to stress."
-            ],
-            correct: 1,
-            explain: "Selective breeding relies on targeted human choices rather than dynamic natural selection pressures to determine which characteristics are propagated into next-generation bloodlines."
-        },
-        {
-            q: "Which of these everyday domestic items is a direct byproduct of systemic plant selective breeding?",
-            options: [
-                "Wild mountain moss bushes",
-                "Pure maple syrup tapped from untamed forests",
-                "Modern domestic corn (maize) bred from wild teosinte grass",
-                "Fern plants found deep inside tropical regions"
-            ],
-            correct: 2,
-            explain: "Ancient agriculturalists systematically cross-selected Teosinte grass variants over thousands of generations to eventually yield large, nutritious modern corn crops."
-        },
-        {
-            q: "What is a major genetic vulnerability often caused by extensive selective inbreeding?",
-            options: [
-                "A massive expansion of overall gene pool diversity.",
-                "An increased expression of harmful, hidden recessive genetic disorders.",
-                "An organism becoming instantly immune to mutating climate variations.",
-                "A complete stabilization that eliminates the threat of extinction."
-            ],
-            correct: 1,
-            explain: "Narrowing parent pools raises homozygosity, making it far more likely that harmful recessive traits find matching alleles and display physical defects or health problems."
-        },
-        {
-            q: "What distinguishes selective breeding from modern genetic modification (GMOs)?",
-            options: [
-                "Selective breeding works entirely through natural reproductive mating cycles over generations.",
-                "Selective breeding constructs entire synthetic organisms from artificial base elements.",
-                "Genetic modification takes centuries to express minor phenotypic structural shifts.",
-                "There is no difference; both processes use identical toolsets."
+                "Selectively bred organisms are colored pink, while wild variants are sky blue.",
+                "Selectively bred organisms have a green square shape, while wild variants are gray circles.",
+                "Selectively bred organisms are twice the absolute pixel size of wild variants.",
+                "Selectively bred organisms spawn on the left half of the grid environment."
             ],
             correct: 0,
-            explain: "Selective breeding works by steering traditional mating vectors over time, whereas genetic engineering extracts, splices, or edits DNA strands directly in a molecular lab setup."
+            explain: "The simulation script explicitly assigns pink ('pink') to the selectively bred organisms (sbs) and sky blue ('sky') to the wild variants (wvs) during setup."
         },
         {
-            q: "If a dog breeder cross-checks parent animals to select exclusively for a massive size profile, what happens to the hidden, unselected traits?",
+            q: "Under normal default environmental conditions, what are the baseline survival and reproduction rates of the Selectively Bred (SB) population?",
             options: [
-                "Unselected traits will naturally expand at an identical speed factor.",
-                "Unselected traits might inadvertently drop out or experience unintended side effects.",
-                "All alternative anatomical functions automatically upgrade to support the size.",
-                "The unselected genes transform safely into a completely passive state."
+                "Survival rate of 0.50 and Reproduction rate of 0.05",
+                "Survival rate of 0.99 and Reproduction rate of 0.12",
+                "Survival rate of 0.90 and Reproduction rate of 0.25",
+                "Survival rate of 0.98 and Reproduction rate of 0.08"
             ],
             correct: 1,
-            explain: "Selecting heavily for a single feature can unintentionally lock in hidden undesirable traits, such as joint issues or shortened lifespans, due to genetic linkage."
+            explain: "Under standard conditions, the simulation initializes the SB variants with a superior 0.99 survival rate and a 0.12 reproduction rate."
         },
         {
-            q: "Why do wild variant populations generally bounce back better from sudden ecosystem adjustments than selectively bred ones?",
+            q: "What emergency condition causes the NetLogo simulation loop to execute a complete 'stop' command?",
             options: [
-                "Wild populations are structurally larger and stronger.",
-                "Wild populations maintain a highly varied pool of diverse genes to pull adaptations from.",
-                "Selectively bred strains can dynamically construct new traits upon encountering threats.",
-                "Selectively bred species rely entirely on complex human protections to survive."
+                "When the total cumulative runtime hits exactly 500 calendar years.",
+                "When either individual variant population count reaches or exceeds 100,000 organisms.",
+                "When a sudden genetic mutation converts all sky-colored dots into pink shapes.",
+                "When the available digital resource plots are completely consumed."
             ],
             correct: 1,
-            explain: "Genetic variation acts as an environmental safeguard. Diverse populations contain different biological resistances, whereas hyper-selected populations share identical vulnerabilities."
+            explain: "The loop checks 'if count sbs >= 100000 or count wvs >= 100000 [ stop ]' to prevent memory overflows or excessive growth spikes."
+        },
+        {
+            q: "How do the performance profiles change when a simulated 'Environmental Shift' event occurs?",
+            options: [
+                "Both groups experience an immediate 50% decrease in overall reproductive speeds.",
+                "The Selectively Bred population baseline crashes, while Wild Variants keep a steady 0.98 survival rate.",
+                "Wild Variants are wiped out instantly due to a lack of targeted metabolic structures.",
+                "Selectively Bred groups become entirely immune to standard natural mortality risks."
+            ],
+            correct: 1,
+            explain: "When natural conditions change, the heavily specialized features of the SB group lose their advantage, dropping below the stable, high-diversity 0.98 baseline maintained by Wild Variants."
+        },
+        {
+            q: "What baseline behavioral routines are executed by organisms on every step ('go') of the simulation?",
+            options: [
+                "They track user cursor inputs to group up into defensive coordinates.",
+                "They update global environmental rates and run their specific breed behavior blocks.",
+                "They consume a set energy value to artificially double their size dimensions.",
+                "They completely swap genetic profiles through cross-breed functions."
+            ],
+            correct: 1,
+            explain: "The main clock sequence updates rates globally, and then asks each breed ('sbs' and 'wvs') to systematically deploy their independent behavior blocks."
+        },
+        {
+            q: "What biological vulnerability does this simulation illustrate about artificial long-term selective breeding profiles?",
+            options: [
+                "Highly bred variants are too large to fit through natural environmental paths.",
+                "Hyper-focused traits make populations fragile against sudden changes, while diverse wild profiles resist shocks.",
+                "Artificial groups reproduce too slowly to keep pace with natural replacement loops.",
+                "Bred variants mutate back into ancestral strains after three generations."
+            ],
+            correct: 1,
+            explain: "The research demonstrates that optimizing for single-environment traits leaves a population vulnerable to shifts. Meanwhile, wild strains maintain stable survival thresholds because they have genetic variation."
         }
     ];
 
